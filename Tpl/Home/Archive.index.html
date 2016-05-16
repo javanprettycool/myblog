@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<!--
+	Striped by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+-->
+<html>
+	<head>
+		<title>Javan article</title>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<!--[if lte IE 8]><script src="__JS__/ie/html5shiv.js"></script><![endif]-->
+		<link rel="stylesheet" href="__CSS__/bootstrap.min.css" />
+		<link rel="stylesheet" href="__CSS__/main.css" />
+		<!--[if lte IE 8]><link rel="stylesheet" href="__CSS__/ie8.css" /><![endif]-->
+	</head>
+	<body>
+
+		<!-- Content -->
+			<div id="content">
+				<div class="inner">
+					<volist name="article" id="item">
+					<!-- Post -->
+						<article class="box post post-excerpt">
+							<header>
+								<!--
+									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
+									if they get too long. You can also remove the <p> entirely if you don't
+									need a subtitle.
+								-->
+								<h2><a href="#">{$item.title}</a></h2>
+								<p>{$item.remark}</p>
+							</header> 
+						</article>
+						<hr />
+					</volist>
+					<!-- Pagination -->
+					<include file="Public:page"/>
+
+				</div>
+			</div>
+
+		<!-- Sidebar -->
+		<div id="sidebar" style="min-height: 2000px">
+
+				<ul  style="margin-left: 10px;font-size: 16px;">
+					<li class="current"><a href="{:U('Index/index')}">Home</a></li>
+					<li><a href="{:U('Archive/index')}">Article</a></li>
+					<li><a href="#">Photo</a></li>
+					<li><a href="#">About Me</a></li>
+					<li><a href="#">Login</a></li>
+				</ul>
+
+
+			<!-- Recent Posts -->
+			<section class="box recent-posts">
+				<header>
+					<h2>Archive</h2>
+				</header>
+				<ul>
+					<li><a href="#">Lorem ipsum dolor</a></li>
+					<li><a href="#">Feugiat nisl aliquam</a></li>
+					<li><a href="#">Sed dolore magna</a></li>
+					<li><a href="#">Malesuada commodo</a></li>
+					<li><a href="#">Ipsum metus nullam</a></li>
+				</ul>
+			</section>
+
+			<!-- Calendar -->
+			<section class="box calendar">
+				<div class="inner">
+					<include file="Public:calendar"/>
+				</div>
+			</section>
+
+
+		</div>
+
+		<!-- Scripts -->
+			<script src="__JS__/jquery.min.js"></script>
+			<!--[if lte IE 8]><script src="__JS__/ie/respond.min.js"></script><![endif]-->
+			<script src="__JS__/bootstrap.min.js"></script>
+			<script src="__JS__/main.js"></script>
+
+	</body>
+</html>
