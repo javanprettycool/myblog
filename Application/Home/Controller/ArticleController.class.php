@@ -47,6 +47,7 @@ class ArticleController extends Controller {
         $this->assign("article",$article);
         $this->assign("next",$next);
         $this->assign("prev",$prev);
+        $this->assign("calendar", getCalendar(time()));
 
         $this->display();
 

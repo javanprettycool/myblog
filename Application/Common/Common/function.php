@@ -25,7 +25,15 @@ function getCalendar($date, $timetable = array()) {
 
     $year = date("Y", $date);
     $month = date("M", $date);
-    $day = date("j", $date);
+    $today = date("j", $date);
+
+    $day_arr = array();
+    if (array_key_exists($year, $timetable)) {
+        if (array_key_exists($month, $timetable[$year])) {
+            $day_arr = $timetable[$year][$month];
+        }
+    }
+
 
     $week = "<thead>
 			<tr>
@@ -49,6 +57,16 @@ function getCalendar($date, $timetable = array()) {
 
     $calendar = "<tbody>";
     for ($i = 1; $i <= $total_day; $i++) {
+        $day = "<span>".$i."</span>";
+        $url = U('./archive-'.$year.date("m", $date).$i);
+
+        foreach ($day_arr as $needle) {
+            if ($i == $needle) {
+                $day = "<a href='".$url."'>" . $i . "</a>";
+                break;
+            }
+        }
+
 
         if ($i != 1 && ($i + $week_offset) % 7 == 1) {
             $calendar .= "<tr>";
@@ -61,10 +79,10 @@ function getCalendar($date, $timetable = array()) {
             }
         }
 
-        if ($i == $day) {
-            $calendar .= "<td class='today'><a href='#'>".$i."</a></td>";
+        if ($i == $today) {
+            $calendar .= "<td class='today'><a href=''>".$i."</a></td>";
         } else {
-            $calendar .= "<td><span>".$i."</span></td>";
+            $calendar .= "<td>".$day."</td>";
         }
 
         if (($i + $week_offset) % 7 == 0) {

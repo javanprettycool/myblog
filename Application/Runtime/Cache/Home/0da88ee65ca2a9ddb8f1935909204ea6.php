@@ -45,7 +45,7 @@
 								-->
 								<ul class="stats">
 									<li><a href="#" class="icon fa-comment"><?php echo ($item["comment_no"]); ?></a></li>
-									<li><a href="#" class="icon fa-heart">32</a></li>
+									<li><a href="#" class="icon fa-heart"><?php echo ($item["hit"]); ?></a></li>
 									<!--<li><a href="#" class="icon fa-twitter">64</a></li>
                                 <li><a href="#" class="icon fa-facebook">128</a></li>-->
 								</ul>

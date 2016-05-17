@@ -6,6 +6,6 @@ return array(
     'URL_ROUTE_RULES' => array(
         '/^index$/'           	=>    'Index/index',
         '/^article-(\d{1,5})$/' =>  'Article/content?id=:1',
-        '/^archive-(\d{1,5})$/' =>  'Archive/index?id=:1'
+        '/^archive-(\d{8})$/' =>  'Archive/index?date=:1'
     )
 );

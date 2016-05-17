@@ -2008,6 +2008,8 @@
 	}
 
 	.box.calendar td a {
+		background-color: #165597;
+		background-image: url("images/bg01.png");
 		color: #fff;
 		font-weight: 700;
 	}
