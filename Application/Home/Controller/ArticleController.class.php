@@ -41,8 +41,8 @@ class ArticleController extends Controller {
         $tmp = M("article");
         $article = $tmp->where("id=%d and view>0",$id)->find();
 
-        $next = $tmp->where("id>$id and view>0")->find();
-        $prev = $tmp->where("id<$id and view>0")->find();
+        $next = $tmp->where("id>$id and view>0")->order("create_time desc")->find();
+        $prev = $tmp->where("id<$id and view>0")->order("create_time desc")->find();
 
         $this->assign("article",$article);
         $this->assign("next",$next);

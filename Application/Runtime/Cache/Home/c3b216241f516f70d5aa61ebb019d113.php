@@ -62,7 +62,7 @@
 						<label  class="col-sm-2">显示</label>
 						<div class="col-sm-10">
 							<label><input type="radio" name="show" value="0" /> Not show</label>
-							<label><input type="radio" name="show" value="1" /> Show</label>
+							<label><input type="radio" name="show" value="1" checked/> Show</label>
 							<label><input type="radio" name="show" value="2" /> Hot</label>
 						</div>
 					</div>
@@ -106,8 +106,8 @@
 			<input type="text" class="text" name="search" placeholder="Search" />
 		</form>
 	</section>
-
-	<!-- Text -->
+<!--
+	&lt;!&ndash; Text &ndash;&gt;
 	<section class="box text-style1">
 		<div class="inner">
 			<p>
@@ -115,7 +115,7 @@
 				template designed by <a href="http://n33.co/">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
 			</p>
 		</div>
-	</section>
+	</section>-->
 
 	<!-- Recent Posts -->
 	<section class="box recent-posts">
@@ -145,70 +145,10 @@
 
 	<!-- Calendar -->
 	<section class="box calendar">
-		<div class="inner">
-			<table>
-				<caption>July 2014</caption>
-				<thead>
-				<tr>
-					<th scope="col" title="Monday">M</th>
-					<th scope="col" title="Tuesday">T</th>
-					<th scope="col" title="Wednesday">W</th>
-					<th scope="col" title="Thursday">T</th>
-					<th scope="col" title="Friday">F</th>
-					<th scope="col" title="Saturday">S</th>
-					<th scope="col" title="Sunday">S</th>
-				</tr>
-				</thead>
-				<tbody>
-				<tr>
-					<td colspan="4" class="pad"><span>&nbsp;</span></td>
-					<td><span>1</span></td>
-					<td><span>2</span></td>
-					<td><span>3</span></td>
-				</tr>
-				<tr>
-					<td><span>4</span></td>
-					<td><span>5</span></td>
-					<td><a href="#">6</a></td>
-					<td><span>7</span></td>
-					<td><span>8</span></td>
-					<td><span>9</span></td>
-					<td><a href="#">10</a></td>
-				</tr>
-				<tr>
-					<td><span>11</span></td>
-					<td><span>12</span></td>
-					<td><span>13</span></td>
-					<td class="today"><a href="#">14</a></td>
-					<td><span>15</span></td>
-					<td><span>16</span></td>
-					<td><span>17</span></td>
-				</tr>
-				<tr>
-					<td><span>18</span></td>
-					<td><span>19</span></td>
-					<td><span>20</span></td>
-					<td><span>21</span></td>
-					<td><span>22</span></td>
-					<td><a href="#">23</a></td>
-					<td><span>24</span></td>
-				</tr>
-				<tr>
-					<td><a href="#">25</a></td>
-					<td><span>26</span></td>
-					<td><span>27</span></td>
-					<td><span>28</span></td>
-					<td class="pad" colspan="3"><span>&nbsp;</span></td>
-				</tr>
-				</tbody>
-			</table>
-		</div>
-	</section>
-
-	<!-- Copyright -->
-	<ul id="copyright">
-		<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-	</ul>
+	<div class="inner">
+		<?php echo ($calendar); ?>
+	</div>
+</section>
 
 </div>
 

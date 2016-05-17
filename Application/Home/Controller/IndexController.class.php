@@ -21,6 +21,10 @@ class IndexController extends Controller {
         }
 
         $article = M('article')->order("create_time desc")->limit($Page->firstRow.','.$Page->listRows)->select();
+
+
+
+
         $this->assign('page', $show);
         $this->assign("article", $article);
         $this->assign("single_next", $single_next);

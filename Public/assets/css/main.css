@@ -1981,6 +1981,17 @@
 		text-align: center;
 	}
 
+	.box.calendar .right {
+		float:right;
+		margin-right:10px;
+		cursor:pointer;
+	}
+	.box.calendar .left {
+		float:left;
+		margin-left:10px;
+		cursor:pointer;
+	}
+
 	.box.calendar td a, .box.calendar td span {
 		display: block;
 		margin: 0 auto;

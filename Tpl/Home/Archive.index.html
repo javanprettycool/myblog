@@ -30,7 +30,7 @@
 							<span class="date"><span class="month">{$month}</span><span class="year">, {$year}</span></span>
 							<hr />
 								<?php foreach($articles as $article):?>
-									<p><a href="#">{$article.title}</a></p>
+									<p><a href="{:U('./article-'.$article['id'])}">{$article.title}</a></p>
 								<?php endforeach; ?>
 						</div>
 						<?php endforeach; ?>
@@ -59,7 +59,7 @@
 				<header>
 					<h2>Archive</h2>
 				</header>
-				<ul style="font-size:12px;">
+				<ul style="font-size:12px;padding-left: 10px;">
 					<volist name="archive" id="item">
 						<li><a href="{:U('./archive-'.$item['a_id'])}">{$item.a_name}</a></li>
 					</volist>
