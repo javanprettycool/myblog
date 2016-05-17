@@ -19,21 +19,23 @@
 		<!-- Content -->
 			<div id="content">
 				<div class="inner">
-					<volist name="article" id="item">
+					<h3 style="margin:20px 0 30px 0">{$archive_title}</h3>
+					<if condition="empty($article_list)">
+						<p>暂时没有文章</p>
+						</if>
+					<?php foreach($article_list as $year => $months):?>
+						<?php foreach($months as $month => $articles):?>
 					<!-- Post -->
-						<article class="box post post-excerpt">
-							<header>
-								<!--
-									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
-									if they get too long. You can also remove the <p> entirely if you don't
-									need a subtitle.
-								-->
-								<h2><a href="#">{$item.title}</a></h2>
-								<p>{$item.remark}</p>
-							</header> 
-						</article>
-						<hr />
-					</volist>
+						<div class="archive">
+							<span class="date"><span class="month">{$month}</span><span class="year">, {$year}</span></span>
+							<hr />
+								<?php foreach($articles as $article):?>
+									<p><a href="#">{$article.title}</a></p>
+								<?php endforeach; ?>
+						</div>
+						<?php endforeach; ?>
+					<?php endforeach; ?>
+
 					<!-- Pagination -->
 					<include file="Public:page"/>
 
@@ -42,7 +44,7 @@
 
 		<!-- Sidebar -->
 		<div id="sidebar" style="min-height: 2000px">
-
+			<div>
 				<ul  style="margin-left: 10px;font-size: 16px;">
 					<li class="current"><a href="{:U('Index/index')}">Home</a></li>
 					<li><a href="{:U('Archive/index')}">Article</a></li>
@@ -50,28 +52,22 @@
 					<li><a href="#">About Me</a></li>
 					<li><a href="#">Login</a></li>
 				</ul>
-
+			</div>
 
 			<!-- Recent Posts -->
 			<section class="box recent-posts">
 				<header>
 					<h2>Archive</h2>
 				</header>
-				<ul>
-					<li><a href="#">Lorem ipsum dolor</a></li>
-					<li><a href="#">Feugiat nisl aliquam</a></li>
-					<li><a href="#">Sed dolore magna</a></li>
-					<li><a href="#">Malesuada commodo</a></li>
-					<li><a href="#">Ipsum metus nullam</a></li>
+				<ul style="font-size:12px;">
+					<volist name="archive" id="item">
+						<li><a href="{:U('./archive-'.$item['a_id'])}">{$item.a_name}</a></li>
+					</volist>
 				</ul>
 			</section>
 
 			<!-- Calendar -->
-			<section class="box calendar">
-				<div class="inner">
-					<include file="Public:calendar"/>
-				</div>
-			</section>
+			<include file="Public:calendar"/>
 
 
 		</div>

@@ -29,7 +29,7 @@
 					<div class="form-group">
 						<label >分类</label>
 						<select id="archive" style="width:200px;">
-							<option value="1">fggg</option>
+							<?php if(is_array($archive)): $i = 0; $__LIST__ = $archive;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><option value="<?php echo ($item["a_id"]); ?>"><?php echo ($item["a_name"]); ?></option><?php endforeach; endif; else: echo "" ;endif; ?>
 						</select>
 					</div>
 
@@ -91,12 +91,12 @@
 	<!-- Nav -->
 	<nav id="nav">
 		<ul>
-			<li class="current"><a href="<?php echo U('Index/index');?>">Home</a></li>
-			<li><a href="<?php echo U('Archive/index');?>">Article</a></li>
-			<li><a href="#">Photo</a></li>
-			<li><a href="#">About Me</a></li>
-			<li><a href="#">Login</a></li>
-			<li><a href="<?php echo U('Article/index');?>">Add Article</a></li>
+			<li class="<?php echo ($h); ?>"><a href="<?php echo U('Index/index');?>">Home</a></li>
+			<li class="<?php echo ($a); ?>"><a href="<?php echo U('Archive/index');?>">Article</a></li>
+			<li class="<?php echo ($p); ?>"><a href="#">Photo</a></li>
+			<li class="<?php echo ($am); ?>"><a href="#">About Me</a></li>
+			<li ><a href="#">Login</a></li>
+			<li class="<?php echo ($e); ?>"><a href="<?php echo U('Article/index');?>">Add Article</a></li>
 		</ul>
 	</nav>
 

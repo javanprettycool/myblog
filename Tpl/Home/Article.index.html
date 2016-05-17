@@ -29,7 +29,9 @@
 					<div class="form-group">
 						<label >分类</label>
 						<select id="archive" style="width:200px;">
-							<option value="1">fggg</option>
+							<volist name="archive" id="item">
+								<option value="{$item.a_id}">{$item.a_name}</option>
+							</volist>
 						</select>
 					</div>
 

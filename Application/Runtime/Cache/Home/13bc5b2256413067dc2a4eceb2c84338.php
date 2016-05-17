@@ -19,16 +19,16 @@
 		<!-- Content -->
 			<div id="content">
 				<div class="inner">
-					<?php if(is_array($article)): $i = 0; $__LIST__ = $article;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$item): $mod = ($i % 2 );++$i;?><!-- Post -->
-						<article class="box post post-excerpt">
+					<!-- Post -->
+						<article class="box post post-excerpt" style="min-height: 500px">
 							<header>
 								<!--
 									Note: Titles and subtitles will wrap automatically when necessary, so don't worry
 									if they get too long. You can also remove the <p> entirely if you don't
 									need a subtitle.
 								-->
-								<h2><a href="<?php echo U('./article-'.$item['id']);?>"><?php echo ($item["title"]); ?></a></h2>
-								<p><?php echo ($item["remark"]); ?></p>
+								<h2><a href="#"><?php echo ($article["title"]); ?></a></h2>
+								<p><?php echo ($article["remark"]); ?></p>
 							</header>
 							<div class="info">
 								<!--
@@ -39,30 +39,34 @@
 									the entire "date" element.
 
 								-->
-								<span class="date"><span class="month"><?php echo (date("M",$item["create_time"])); ?></span> <span class="day"><?php echo (date("j",$item["create_time"])); ?></span><span class="year">, <?php echo (date("Y",$item["create_time"])); ?></span></span>
+								<span class="date"><span class="month"><?php echo (date("M",$article["create_time"])); ?></span> <span class="day"><?php echo (date("j",$article["create_time"])); ?></span><span class="year">, <?php echo (date("Y",$article["create_time"])); ?></span></span>
 								<!--
 									Note: You can change the number of list items in "stats" to whatever you want.
 								-->
 								<ul class="stats">
-									<li><a href="#" class="icon fa-comment"><?php echo ($item["comment_no"]); ?></a></li>
+									<li><a href="#" class="icon fa-comment"><?php echo ($article["comment_no"]); ?></a></li>
 									<li><a href="#" class="icon fa-heart">32</a></li>
 									<!--<li><a href="#" class="icon fa-twitter">64</a></li>
                                 <li><a href="#" class="icon fa-facebook">128</a></li>-->
 								</ul>
 							</div>
 							<?php if($item["img"] != ''): ?><a href="#" class="image featured"><img src="<?php echo ($item["img"]); ?>" alt="" /></a><?php endif; ?>
-							<?php echo ($item["content"]); ?>
-							<a href="#" class="readmore">readmore</a>
+							<?php echo ($article["content"]); ?>
 						</article>
-						<hr /><?php endforeach; endif; else: echo "" ;endif; ?>
-					<!-- Pagination -->
-					<div class="pagination">
-	<!--<a href="#" class="button previous">Previous Page</a>-->
-	<div class="pages">
-		<?php echo ($page); ?>
-	</div>
-	<?php echo ($single_next); ?>
-</div>
+					<div class="a-up">
+						<p>上一篇：
+							<?php if(empty($prev)): ?>&nbsp;没有了
+								<?php else: ?>
+							<a title="<?php echo ($prev['title']); ?>" href="<?php echo U('./article-'.$prev['id']);?>">&nbsp;<?php echo ($prev['title']); ?></a><?php endif; ?>
+						</p>
+					</div>
+					<div class="a-down">
+						<p>下一篇：
+							<?php if(empty($next)): ?>&nbsp;没有了
+							<?php else: ?>
+								<a title="<?php echo ($prev['title']); ?>" href="<?php echo U('./article-'.$next['id']);?>">&nbsp;<?php echo ($next['title']); ?></a><?php endif; ?>
+						</p>
+					</div>
 
 				</div>
 			</div>
@@ -99,8 +103,8 @@
 			<input type="text" class="text" name="search" placeholder="Search" />
 		</form>
 	</section>
-<!--
-	&lt;!&ndash; Text &ndash;&gt;
+
+	<!-- Text -->
 	<section class="box text-style1">
 		<div class="inner">
 			<p>
@@ -108,7 +112,7 @@
 				template designed by <a href="http://n33.co/">AJ</a> for <a href="http://html5up.net/">HTML5 UP</a>
 			</p>
 		</div>
-	</section>-->
+	</section>
 
 	<!-- Recent Posts -->
 	<section class="box recent-posts">
@@ -138,10 +142,70 @@
 
 	<!-- Calendar -->
 	<section class="box calendar">
-	<div class="inner">
-		<?php echo ($calendar); ?>
-	</div>
-</section>
+		<div class="inner">
+			<table>
+				<caption>July 2014</caption>
+				<thead>
+				<tr>
+					<th scope="col" title="Monday">M</th>
+					<th scope="col" title="Tuesday">T</th>
+					<th scope="col" title="Wednesday">W</th>
+					<th scope="col" title="Thursday">T</th>
+					<th scope="col" title="Friday">F</th>
+					<th scope="col" title="Saturday">S</th>
+					<th scope="col" title="Sunday">S</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr>
+					<td colspan="4" class="pad"><span>&nbsp;</span></td>
+					<td><span>1</span></td>
+					<td><span>2</span></td>
+					<td><span>3</span></td>
+				</tr>
+				<tr>
+					<td><span>4</span></td>
+					<td><span>5</span></td>
+					<td><a href="#">6</a></td>
+					<td><span>7</span></td>
+					<td><span>8</span></td>
+					<td><span>9</span></td>
+					<td><a href="#">10</a></td>
+				</tr>
+				<tr>
+					<td><span>11</span></td>
+					<td><span>12</span></td>
+					<td><span>13</span></td>
+					<td class="today"><a href="#">14</a></td>
+					<td><span>15</span></td>
+					<td><span>16</span></td>
+					<td><span>17</span></td>
+				</tr>
+				<tr>
+					<td><span>18</span></td>
+					<td><span>19</span></td>
+					<td><span>20</span></td>
+					<td><span>21</span></td>
+					<td><span>22</span></td>
+					<td><a href="#">23</a></td>
+					<td><span>24</span></td>
+				</tr>
+				<tr>
+					<td><a href="#">25</a></td>
+					<td><span>26</span></td>
+					<td><span>27</span></td>
+					<td><span>28</span></td>
+					<td class="pad" colspan="3"><span>&nbsp;</span></td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</section>
+
+	<!-- Copyright -->
+	<ul id="copyright">
+		<li>&copy; Untitled.</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
+	</ul>
 
 </div>
 

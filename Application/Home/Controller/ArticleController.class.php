@@ -3,6 +3,10 @@ namespace Home\Controller;
 use Think\Controller;
 class ArticleController extends Controller {
     public function index(){
+
+        $archive = M('archive')->order("a_time desc")->select();
+        $this->assign("e", 'current');
+        $this->assign("archive", $archive);
         $this->display();
     }
 
@@ -29,6 +33,23 @@ class ArticleController extends Controller {
 
         }
         $this->ajaxReturn($data);
+    }
+
+    public function content()
+    {
+        $id = I("get.id");
+        $tmp = M("article");
+        $article = $tmp->where("id=%d and view>0",$id)->find();
+
+        $next = $tmp->where("id>$id and view>0")->find();
+        $prev = $tmp->where("id<$id and view>0")->find();
+
+        $this->assign("article",$article);
+        $this->assign("next",$next);
+        $this->assign("prev",$prev);
+
+        $this->display();
+
     }
 
 

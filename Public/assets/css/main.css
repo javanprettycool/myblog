@@ -1978,6 +1978,7 @@
 		box-shadow: inset 0px 1px 0px 0px rgba(255, 255, 255, 0.075);
 		font-weight: 700;
 		color: #fff;
+		text-align: center;
 	}
 
 	.box.calendar td a, .box.calendar td span {
@@ -3054,3 +3055,26 @@
 		margin-left:10px;
 		box-sizing: border-box;
 	}
+
+
+	.archive hr{
+		border: 0;
+		border-top: solid 1px #ddd;
+		padding: 1em 0 0 0;
+		margin: 0;
+	}
+
+	.archive p {
+		margin-left: 1em;
+	}
+
+	.archive {
+		margin-bottom: 2em;
+	}
+
+	.archive .date{
+		margin-left: 10px;
+	}
+
+
+
